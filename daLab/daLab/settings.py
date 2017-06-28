@@ -25,7 +25,7 @@ SECRET_KEY = '=8)zjv)3k_e!joxu3__-p!_7lt=wf-g%sdhs)f6-66-e)lt6io'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [u'sglusa.pythonanywhere.com']
+ALLOWED_HOSTS = ['sglusa.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
