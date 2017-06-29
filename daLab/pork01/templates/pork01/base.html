@@ -1,0 +1,81 @@
+<!-- Loads the path to your static files-->
+{% load staticfiles %}
+<!-- Bootstrap link from the video.
+ 	The order in which these files are imported matters.
+The latter will overwrite the former.-->
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<!-- Font from Gogle API -->
+<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" type="text/css">
+<!-- Mystylesheet -->
+<link rel="stylesheet" type="text/css" href="{% static 'pork01/style.css' %}"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<html>
+<head>
+  <title>{% block myTitle %} Porky {% endblock %}</title>
+</head>
+<body>
+  <nav class="navbar navbar-inverse"> <!-- "inverse" makes it dark whereas "default' makes it white"-->
+  	<div class="container-fluid">
+  		<!-- Clickable logo at the top left corner. -->
+  		<div class="navbar-header">
+  			<!-- make the "topNavBar" visible or invisble via toggle -->
+  			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+  				<!-- Makes that bar menu show up at the top right corner when the winow is smallified enough.
+  						<span class="icon-bar"></span>
+  				draws each line so yiou can have as many or as little as you want.-->
+  				<span class="icon-bar"></span>
+  				<span class="icon-bar"></span>
+  				<span class="icon-bar"></span>
+  			</button>
+  			<a class="navbar-brand" href="{% url 'pork01:index' %}">Link here</a>
+  		</div>
+
+  		<!-- Items -->
+  		<!-- glyphicon can be found at http://getbootstrap.com/components/ -->
+  		<div class="collapse navbar-collapse" id="topNavBar"> <!-- makes the navbar items collapsible as the UI is resized -->
+
+  			<!-- The next two buttons in the nav bar -->
+  			<ul class="nav navbar-nav">
+  				<li class="">
+  					<a href="{% url 'pork01:index' %}">
+  						<span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>&nbsp;Products
+  					</a>
+  				</li>
+  				<li class="">
+  					<a href="{% url 'pork01:index' %}">
+  						<span class="glyphicon glyphicon-yen" aria-hidden="true"></span>&nbsp;Orders
+  					</a>
+  				</li>
+  			</ul>
+  			<!-- Th Search field and button -->
+  			<form class="navbar-form navbar-left" role="search" method="get" action="#">
+  				<div class="form-group">
+  					<input type="text" class="form-control" name="q" value="">
+  				</div>
+  				<button type="submit" class="btn btn-default"> Search</button>
+  			</form>
+
+  			<ul class="nav navbar-nav navbar-right">
+  				<li class="">
+  					<a href="{% url 'pork01:product-add' %}"> <!-- from urls.py -->
+  						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;Add Products
+  					</a>
+  				</li>
+  				<li class="">
+  					<a href="{% url 'pork01:index' %}">
+  						<span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp;Logout
+  					</a>
+  				</li>
+  			</ul>
+
+  		</div>
+
+  	</div>
+  </nav>
+
+  {% block myBody%}
+  {% endblock %}
+</body>
+</html>

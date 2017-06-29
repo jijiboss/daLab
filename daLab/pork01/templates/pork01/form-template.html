@@ -1,0 +1,12 @@
+{% for field in form %}
+  <div class="form-group">
+      <!--offset-2 is supposed to display the error above the field but it doens't-->
+      <div class="col-sm-offset-2 col-sm-10">
+        <!-- Displays error if click on Submit with epty fields -->
+        <span class="text-danger small"> {{field.errors }} </span>
+      </div>
+      <label class="control-label col-sm-2">{{ field.label_tag }}</label>
+      <!--the actul input area, i 10 cilumns wide -->
+      <div class="col-sm-10">{{ field }}</div>
+  </div>
+{% endfor %}

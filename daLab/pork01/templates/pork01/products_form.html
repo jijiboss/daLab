@@ -1,0 +1,33 @@
+<!-- Form to create a new product.
+The file name must be in the format
+  <models>_form.html
+-->
+
+{% extends 'pork01/base.html' %} <!-- load the nav bar -->
+{% block title %} Add a newproduct {% endblock %}
+
+{% block myBody %}
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-sm-12 col-md-7">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% include 'pork01/form-template.html' %}
+            <div class="form-group">
+
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success">Submit</button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
