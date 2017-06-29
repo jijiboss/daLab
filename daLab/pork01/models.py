@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.urlresolvers import reverse
+from django.contrib import admin #for the Admin view
 
 #Supplier table
 class Suppliers(models.Model):
@@ -26,6 +27,10 @@ class Products(models.Model):
     def __str__(self):
         return str(self.supplier) + ' (' + str(self.prod_code_supplier) + ')' + ' - ' + self.item_supplier
 
+class ProductsAdmin(admin.ModelAdmin):
+    list_display = ('supplier','prod_code_supplier', 'item_supplier', 'prod_code_sumitomo', 'item_sumitomo')
+
+
 #Order table
 class Orders(models.Model):
     order_week = models.CharField(max_length=12)
@@ -41,3 +46,7 @@ class Orders(models.Model):
 
     def __str__(self):
         return str(self.order_week) + " - " + str(self.order_date) + " - " + str(self.supplier) + " - " + str(self.prod_code_sumitomo) + " - " + str(self.order_qty) + " - " + str(self.fulfill_qty) + " - " + str(self.production_date) + " - " + str(self.trailer_num) + " - " + str(self.port_of_loading) + " - " + str(self.port_of_unlading)
+
+class OrdersAdmin(admin.ModelAdmin):
+    list_display = ('order_week', 'order_date', 'supplier', 'prod_code_sumitomo',
+     'order_qty', 'fulfill_qty', 'production_date', 'trailer_num', 'port_of_loading', 'port_of_unlading')
