@@ -1,21 +1,3 @@
-python manage.py createsuperuser
-cd ..
-python manage.py createsuperuser
-su python manage.py createsuperuser
-su ./manage.py createsuperuser
-./manage.py createsuperuser
-ls
-python manage.py createsuperuser
-whoami
-python manage.py createsuperuser
-find . -name "libregrtest.cmdline"
-find . -name "cmdline"
-find . -name "*cmdline*"
-find . -name "*manage*"
-path"
-path
-set
-set|grep python
 exit
 pws
 whoami
@@ -497,4 +479,22 @@ pwd
 cd ../testLab
 cd
 workon proto01_env
+exit
+pwd
+git pull
+git commit -m "synched up to Views"
+git status
+git add
+pwd
+git add .
+git commit -m "synched up to Views"
+git pull
+git fetch --all
+git reset --hard origin/master
+git status
+git --fetch all
+git fetch --all
+git reset --hard origin/master
+git fetch --all
+git reset --hard origin/master
 exit
