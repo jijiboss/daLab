@@ -7,7 +7,7 @@ class Suppliers(models.Model):
     supplier = models.CharField(max_length=144)
 
     def __str__(self):
-        return self.supplier
+        return str(self.supplier)
 
 #Product table
 class Products(models.Model):
@@ -48,7 +48,11 @@ class Orders(models.Model):
         return str(self.order_week) + " - " + str(self.order_date) + " - " + str(self.supplier) + " - " + str(self.prod_code_sumitomo) + " - " + str(self.order_qty) + " - " + str(self.fulfill_qty) + " - " + str(self.production_date) + " - " + str(self.trailer_num) + " - " + str(self.port_of_loading) + " - " + str(self.port_of_unlading)
 
 
-class OrdersAdmin(admin.ModelAdmin):
+from import_export.admin import ImportExportModelAdmin #for import_export
+from .resources import OrdersResource #for import_export
+class OrdersAdmin(ImportExportModelAdmin): #for import_export
+    resource_class = OrdersResource #for import_export
+#class OrdersAdmin(admin.ModelAdmin): #replaced for import_export
     #http://blog.endpoint.com/2012/02/dowloading-csv-file-with-from-django.html
 
     #for the tabular view

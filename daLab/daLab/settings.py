@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 	'pork01.apps.Pork01Config',
+	'import_export'
 ]
 
 MIDDLEWARE = [
@@ -126,3 +127,5 @@ MEDIA_ROOT = u'/home/sglusa/daLab/media'
 MEDIA_URL = '/media/'
 STATIC_ROOT = u'/home/sglusa/daLab/static'
 STATIC_URL = '/static/'
+
+IMPORT_EXPORT_USE_TRANSACTIONS = True

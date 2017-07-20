@@ -1,24 +1,4 @@
 exit
-pws
-whoami
-ls
-ls -l
-cd /usr/bin
-ls
-ls -l|grep pythoin
-ls -l|grep python
-ls -l|grep "*python3.6*"
-ls -l|grep python3.6
-cd
-ls
-ls -l
-rm -r proto01
-ls
-ls -l
-vi README*
-mkvirtualenv proto01_env --python=/usr/bin/python3.6
-which python
-exit
 pwd
 ls
 workon proto01_env
@@ -497,4 +477,24 @@ git fetch --all
 git reset --hard origin/master
 git fetch --all
 git reset --hard origin/master
+exit
+gi status
+git status
+git add .
+git commit -m "About to add Import-Export on admin"
+git push
+exit
+pip install django-import-export
+pwd
+ls
+cd daLab
+ls
+ls -l
+cd
+ls
+exit
+ls
+cd daLab
+ls
+pip install django-import-export
 exit
